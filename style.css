@@ -5,39 +5,39 @@
 
 :root {
   /* Colors - Light Mode */
-  --bg-primary: #fbfbfa;
-  --bg-secondary: #f4f3f0;
-  --bg-card: #ffffff;
-  --bg-card-hover: #fafafa;
-  --bg-card-accent: #f0fdf4;
-  --border-color: #e5e5e0;
-  --text-primary: #1c1c1a;
-  --text-secondary: #5e5e5b;
-  --text-muted: #8c8c88;
+  --bg-primary: #f7efe3;
+  --bg-secondary: #efe0cf;
+  --bg-card: #fffaf2;
+  --bg-card-hover: #fbf0e3;
+  --bg-card-accent: #fae8dc;
+  --border-color: #d9bfa9;
+  --text-primary: #3f2b24;
+  --text-secondary: #6f5044;
+  --text-muted: #98766a;
   
   /* Brand Colors */
-  --emerald: #059669;
-  --emerald-hover: #047857;
-  --emerald-light: #ecfdf5;
-  --emerald-dark: #064e3b;
+  --emerald: #a63f2d;
+  --emerald-hover: #853021;
+  --emerald-light: #f7ded4;
+  --emerald-dark: #6f261c;
   
-  --orange: #ea580c;
-  --orange-light: #fff7ed;
+  --orange: #c96532;
+  --orange-light: #f9e4d4;
   
-  --cyan: #0891b2;
-  --cyan-light: #ecfeff;
+  --cyan: #b77736;
+  --cyan-light: #f7ead8;
   
-  --blue: #0284c7;
-  --blue-light: #f0f9ff;
+  --blue: #8f5535;
+  --blue-light: #f1dfd0;
   
-  --rose: #e11d48;
-  --rose-light: #fff1f2;
+  --rose: #b9362f;
+  --rose-light: #f8ddd7;
   
-  --amber: #d97706;
-  --amber-light: #fef3c7;
+  --amber: #c48a28;
+  --amber-light: #f8e9c8;
   
-  --purple: #7c3aed;
-  --purple-light: #f5f3ff;
+  --purple: #7c4a37;
+  --purple-light: #eadbd3;
 
   /* Glassmorphism & Shadows */
   --glass-bg: rgba(255, 255, 255, 0.7);
@@ -59,24 +59,27 @@
 
 /* Dark Mode Variables Override */
 body.dark {
-  --bg-primary: #121211;
-  --bg-secondary: #1a1a19;
-  --bg-card: #1c1c1b;
-  --bg-card-hover: #232322;
-  --bg-card-accent: #13241b;
-  --border-color: #2c2c2a;
-  --text-primary: #f3f3f0;
-  --text-secondary: #a3a3a0;
-  --text-muted: #6e6e6b;
+  --bg-primary: #211713;
+  --bg-secondary: #30201a;
+  --bg-card: #38251e;
+  --bg-card-hover: #452d23;
+  --bg-card-accent: #4b271f;
+  --border-color: #624135;
+  --text-primary: #f7eadc;
+  --text-secondary: #d6b8a5;
+  --text-muted: #aa8878;
   
   /* Brand adaptations */
-  --emerald-light: #062f21;
-  --orange-light: #2c1a0e;
-  --cyan-light: #082d38;
-  --blue-light: #0c2330;
-  --rose-light: #310e19;
-  --amber-light: #2d200a;
-  --purple-light: #1e1337;
+  --emerald: #d36a4b;
+  --emerald-hover: #e88462;
+  --emerald-light: #4b271f;
+  --emerald-dark: #f1b09a;
+  --orange-light: #43281c;
+  --cyan-light: #49351f;
+  --blue-light: #3e2a21;
+  --rose-light: #4e2521;
+  --amber-light: #493719;
+  --purple-light: #3c2923;
 
   --glass-bg: rgba(28, 28, 27, 0.8);
   --glass-border: rgba(255, 255, 255, 0.05);
@@ -2069,27 +2072,27 @@ footer {
 }
 
 .hero-shape, .hero-star, .hero-eye, .hero-figure { position: absolute; display: block; }
-.shape-sun { width: 142px; height: 142px; top: 58px; right: 13%; border-radius: 50%; background: #dc3b1e; }
+.shape-sun { width: 142px; height: 142px; top: 58px; right: 13%; border-radius: 50%; background: #a93f2d; }
 .shape-moon { width: 142px; height: 142px; top: 36px; left: 13%; border-radius: 50%; background: #181914; }
 .shape-moon::after { content: ""; position: absolute; width: 118px; height: 150px; left: 44px; top: -8px; border-radius: 50%; background: #f3e6c7; }
-.shape-blue-dot { width: 70px; height: 70px; top: 78px; left: 30%; border-radius: 50%; background: #176caf; }
-.shape-yellow-dot { width: 56px; height: 78px; left: 8%; top: 54%; border-radius: 50%; background: #f3bd11; transform: rotate(18deg); }
-.shape-red-pill { width: 92px; height: 176px; left: 9%; bottom: -32px; border-radius: 60% 42% 48% 56%; background: #de3b20; transform: rotate(32deg); }
-.shape-blue-moon { width: 92px; height: 92px; right: 6%; bottom: 38px; border-radius: 50%; background: #176caf; }
+.shape-blue-dot { width: 70px; height: 70px; top: 78px; left: 30%; border-radius: 50%; background: #b76535; }
+.shape-yellow-dot { width: 56px; height: 78px; left: 8%; top: 54%; border-radius: 50%; background: #d69a2e; transform: rotate(18deg); }
+.shape-red-pill { width: 92px; height: 176px; left: 9%; bottom: -32px; border-radius: 60% 42% 48% 56%; background: #a9472f; transform: rotate(32deg); }
+.shape-blue-moon { width: 92px; height: 92px; right: 6%; bottom: 38px; border-radius: 50%; background: #c28b36; }
 .shape-blue-moon::after { content: ""; position: absolute; width: 82px; height: 84px; left: -24px; top: -20px; border-radius: 50%; background: #f3e6c7; }
 .hero-star { color: #161712; font-size: 58px; line-height: 1; }
 .star-one { top: 21%; left: 6%; }
 .star-two { right: 7%; top: 44%; }
 
 .hero-eye { width: 92px; height: 48px; border: 6px solid #181914; border-radius: 70% 0 70% 0; transform: rotate(45deg); }
-.hero-eye i { position: absolute; width: 34px; height: 34px; left: 23px; top: 1px; border-radius: 50%; background: #176caf; border: 8px solid #181914; }
+.hero-eye i { position: absolute; width: 34px; height: 34px; left: 23px; top: 1px; border-radius: 50%; background: #8b4b32; border: 8px solid #181914; }
 .eye-one { right: 7%; top: 23%; transform: rotate(45deg) scale(.72); }
 .eye-two { left: 13%; bottom: 18%; transform: rotate(45deg) scale(.5); }
 
 .hero-figure { right: 11%; top: 29%; width: 110px; height: 285px; }
 .figure-eye { position: absolute; top: 0; left: 17px; width: 76px; height: 40px; border: 5px solid #181914; border-radius: 70% 0 70% 0; transform: rotate(45deg); }
-.figure-eye::after { content: ""; position: absolute; width: 22px; height: 22px; left: 22px; top: 4px; border-radius: 50%; background: #176caf; border: 5px solid #181914; }
-.figure-body { position: absolute; left: 10px; bottom: 0; width: 90px; height: 218px; border: 3px solid #181914; border-radius: 50% 50% 45% 45%; background: conic-gradient(from -20deg, #181914 0 25%, #f2bf17 0 50%, #176caf 0 75%, #dd3c20 0); }
+.figure-eye::after { content: ""; position: absolute; width: 22px; height: 22px; left: 22px; top: 4px; border-radius: 50%; background: #8b4b32; border: 5px solid #181914; }
+.figure-body { position: absolute; left: 10px; bottom: 0; width: 90px; height: 218px; border: 3px solid #181914; border-radius: 50% 50% 45% 45%; background: conic-gradient(from -20deg, #181914 0 25%, #d69a2e 0 50%, #b96e32 0 75%, #a93f2d 0); }
 
 /* Menu typography follows the supplied printed restaurant menu. */
 .restaurant-menu {
@@ -2369,5 +2372,107 @@ body.dark .modal-title {
 }
 .btn-clear:hover {
   background-color: var(--text-secondary);
+}
+
+/* ==========================================================================
+   AUTUMN CYPRESS PALETTE — consistent warm red, amber and chestnut accents
+   ========================================================================== */
+body {
+  background:
+    radial-gradient(circle at 8% 18%, rgba(196, 138, 40, .10), transparent 24%),
+    radial-gradient(circle at 92% 44%, rgba(166, 63, 45, .08), transparent 28%),
+    var(--bg-primary);
+}
+
+.tab-nav-container {
+  background: rgba(255, 247, 237, .88);
+  border-color: rgba(166, 63, 45, .18);
+}
+
+body.dark .tab-nav-container {
+  background: rgba(56, 37, 30, .9);
+}
+
+.tab-btn.active {
+  color: var(--emerald-dark);
+  border-color: rgba(166, 63, 45, .28);
+  background: #f9e6d7;
+}
+
+body.dark .tab-btn.active { background: #4b271f; }
+
+.schedule-item {
+  border-left: 4px solid rgba(166, 63, 45, .38);
+}
+
+.schedule-item:nth-child(2n) { border-left-color: rgba(196, 138, 40, .58); }
+.schedule-item.clickable:hover { border-color: #c98265; }
+.sched-icon-box { background: #f4e1d4; }
+body.dark .sched-icon-box { background: #4a3026; }
+
+.menu-hero {
+  background:
+    linear-gradient(135deg, rgba(114, 42, 31, .94), rgba(171, 74, 42, .92)),
+    #7a2e23;
+}
+
+.menu-badge { background: rgba(255, 242, 222, .13); border-color: rgba(255, 230, 199, .28); }
+
+.widget-header-blue {
+  background: linear-gradient(135deg, #9c432e 0%, #c27a32 100%);
+}
+
+.widget-header-amber {
+  background: linear-gradient(135deg, #c18a31 0%, #a4352c 100%);
+}
+
+.weather-detail-item { background: #f4e1d4; }
+body.dark .weather-detail-item { background: #452d23; }
+
+.guideline-card { border-top: 4px solid rgba(166, 63, 45, .55); }
+.guideline-card:nth-child(2n) { border-top-color: rgba(196, 138, 40, .72); }
+
+footer {
+  background:
+    linear-gradient(180deg, rgba(166, 63, 45, .05), transparent 65%),
+    var(--bg-card);
+}
+
+.chat-header,
+.chat-toggle-trigger {
+  background: linear-gradient(135deg, #8f3327, #c56e35);
+}
+
+.chat-header-status { color: #f8d9bd; }
+
+.hero-register-btn {
+  color: #fffaf2;
+  background: linear-gradient(135deg, #8e3025 0%, #cb6f34 100%);
+  border: 1px solid rgba(255, 248, 235, .42);
+  box-shadow: 0 8px 22px rgba(111, 38, 28, .28);
+}
+
+.hero-register-btn:hover {
+  box-shadow: 0 11px 28px rgba(111, 38, 28, .4);
+}
+
+.modal-card {
+  border: 1px solid rgba(166, 63, 45, .26);
+  box-shadow: 0 28px 80px rgba(70, 35, 24, .34);
+}
+
+.modal-header {
+  background: linear-gradient(135deg, rgba(166, 63, 45, .10), rgba(196, 138, 40, .12));
+}
+
+.btn-emerald,
+#reg-submit {
+  background: linear-gradient(135deg, #8e3025, #c56e35) !important;
+}
+
+.form-input:focus,
+.form-group-sm input:focus {
+  border-color: #b75a3c;
+  box-shadow: 0 0 0 3px rgba(166, 63, 45, .12);
 }
 

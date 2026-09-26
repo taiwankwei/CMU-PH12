@@ -37,6 +37,7 @@
       <p class="hero-invitation">秋光正好，微風不燥。<br>誠摯邀請大家來一趟北投的小旅行，<br>喝一杯手沖的溫度，聊一段當年的青春。</p>
       <div class="hero-date"><span>聚會日期</span><strong>2026.11.28（六）</strong></div>
       <p class="hero-subtitle">泡茶 · 咖啡 · 聊天 · 美食 · 漫步北投</p>
+      <button id="hero-register-btn" class="hero-register-btn">立即報名及點餐</button>
     </div>
   </header>
 
@@ -866,46 +867,66 @@
         <!-- 午餐點餐 -->
         <div id="menu-ordering-section" style="margin-bottom: 20px; background: var(--bg-secondary); padding: 16px; border-radius: var(--radius-md); border: 1px dashed var(--border-color);">
           <h4 style="font-size: 0.88rem; font-weight: 800; margin-bottom: 4px; color: var(--emerald-dark); display: flex; justify-content: space-between; align-items: center;">
-            <span>🍽️ 午餐主餐點餐 (舒食套餐組)</span>
+            <span>🍽️ 午餐餐點選擇</span>
             <span id="menu-selected-status" style="font-size: 0.75rem; font-weight: 600; color: var(--emerald-dark);">已選 0 / 1 份</span>
           </h4>
           <div style="margin-bottom: 8px; padding: 8px; background-color: rgba(16, 185, 129, 0.1); border-radius: var(--radius-sm); border-left: 3px solid var(--emerald); font-size: 0.68rem; color: var(--emerald-dark); font-weight: 600; line-height: 1.4;">
-            💡 本套餐已內含附餐：時蔬沙拉、鮮蔬濃湯、精緻甜點、飲品。在此只需依報名總人數點選每人想搭配的一道主菜。
+            💡 請依報名總人數選擇餐點；實際內容依餐廳當日供應為準。
           </div>
           <p class="config-help" style="margin-bottom: 12px; font-size: 0.65rem; color: var(--text-muted);">請依報名人數點選主餐份數：</p>
           
           <div style="display: flex; flex-direction: column; gap: 10px;">
             <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem;">
-              <span style="font-weight: 600;">🍗 燒烤搖滾雞腿排</span>
-              <input type="number" class="menu-item-qty form-input" data-dish="燒烤搖滾雞腿排" min="0" value="0" style="width: 70px; padding: 6px 10px; font-size: 0.8rem; text-align: center; background-color: var(--bg-card);" />
+              <span style="font-weight: 600;">🍝 蕃茄臘肉麵</span>
+              <input type="number" class="menu-item-qty form-input" data-dish="蕃茄臘肉麵" min="0" value="0" style="width: 70px; padding: 6px 10px; font-size: 0.8rem; text-align: center; background-color: var(--bg-card);" />
             </div>
             <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem;">
-              <span style="font-weight: 600;">🥩 紅酒燴牛筋</span>
-              <input type="number" class="menu-item-qty form-input" data-dish="紅酒燴牛筋" min="0" value="0" style="width: 70px; padding: 6px 10px; font-size: 0.8rem; text-align: center; background-color: var(--bg-card);" />
+              <span style="font-weight: 600;">🍅 蕃茄乳酪麵</span>
+              <input type="number" class="menu-item-qty form-input" data-dish="蕃茄乳酪麵" min="0" value="0" style="width: 70px; padding: 6px 10px; font-size: 0.8rem; text-align: center; background-color: var(--bg-card);" />
             </div>
             <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem;">
-              <span style="font-weight: 600;">🥦 燒烤時蔬 (素食)</span>
-              <input type="number" class="menu-item-qty form-input" data-dish="燒烤時蔬 (素食)" min="0" value="0" style="width: 70px; padding: 6px 10px; font-size: 0.8rem; text-align: center; background-color: var(--bg-card);" />
+              <span style="font-weight: 600;">🍝 清炒蕃茄香腸肉麵</span>
+              <input type="number" class="menu-item-qty form-input" data-dish="清炒蕃茄香腸肉麵" min="0" value="0" style="width: 70px; padding: 6px 10px; font-size: 0.8rem; text-align: center; background-color: var(--bg-card);" />
             </div>
             <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem;">
-              <span style="font-weight: 600;">🐟 燒烤邱家好魚</span>
-              <input type="number" class="menu-item-qty form-input" data-dish="燒烤邱家好魚" min="0" value="0" style="width: 70px; padding: 6px 10px; font-size: 0.8rem; text-align: center; background-color: var(--bg-card);" />
+              <span style="font-weight: 600;">🦑 青醬透抽麵</span>
+              <input type="number" class="menu-item-qty form-input" data-dish="青醬透抽麵" min="0" value="0" style="width: 70px; padding: 6px 10px; font-size: 0.8rem; text-align: center; background-color: var(--bg-card);" />
             </div>
             <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem;">
-              <span style="font-weight: 600;">🐷 燒烤永續豬肉</span>
-              <input type="number" class="menu-item-qty form-input" data-dish="燒烤永續豬肉" min="0" value="0" style="width: 70px; padding: 6px 10px; font-size: 0.8rem; text-align: center; background-color: var(--bg-card);" />
+              <span style="font-weight: 600;">🌿 青醬乳酪與風乾蕃茄麵</span>
+              <input type="number" class="menu-item-qty form-input" data-dish="青醬乳酪與風乾蕃茄麵" min="0" value="0" style="width: 70px; padding: 6px 10px; font-size: 0.8rem; text-align: center; background-color: var(--bg-card);" />
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem;">
+              <span style="font-weight: 600;">🍄 清炒松露野菇麵（蛋奶素）</span>
+              <input type="number" class="menu-item-qty form-input" data-dish="清炒松露野菇麵（蛋奶素）" min="0" value="0" style="width: 70px; padding: 6px 10px; font-size: 0.8rem; text-align: center; background-color: var(--bg-card);" />
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem;">
+              <span style="font-weight: 600;">🥬 酒醋時蔬麵（全素）</span>
+              <input type="number" class="menu-item-qty form-input" data-dish="酒醋時蔬麵（全素）" min="0" value="0" style="width: 70px; padding: 6px 10px; font-size: 0.8rem; text-align: center; background-color: var(--bg-card);" />
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem;">
+              <span style="font-weight: 600;">🦑 燒烤透抽</span>
+              <input type="number" class="menu-item-qty form-input" data-dish="燒烤透抽" min="0" value="0" style="width: 70px; padding: 6px 10px; font-size: 0.8rem; text-align: center; background-color: var(--bg-card);" />
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem;">
+              <span style="font-weight: 600;">🐟 燒烤鮮魚</span>
+              <input type="number" class="menu-item-qty form-input" data-dish="燒烤鮮魚" min="0" value="0" style="width: 70px; padding: 6px 10px; font-size: 0.8rem; text-align: center; background-color: var(--bg-card);" />
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem;">
+              <span style="font-weight: 600;">🍗 燒烤雞腿排</span>
+              <input type="number" class="menu-item-qty form-input" data-dish="燒烤雞腿排" min="0" value="0" style="width: 70px; padding: 6px 10px; font-size: 0.8rem; text-align: center; background-color: var(--bg-card);" />
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem;">
+              <span style="font-weight: 600;">🦆 油封鴨腿</span>
+              <input type="number" class="menu-item-qty form-input" data-dish="油封鴨腿" min="0" value="0" style="width: 70px; padding: 6px 10px; font-size: 0.8rem; text-align: center; background-color: var(--bg-card);" />
             </div>
             <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem;">
               <span style="font-weight: 600;">🍤 蒜味油封蝦</span>
               <input type="number" class="menu-item-qty form-input" data-dish="蒜味油封蝦" min="0" value="0" style="width: 70px; padding: 6px 10px; font-size: 0.8rem; text-align: center; background-color: var(--bg-card);" />
             </div>
             <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem;">
-              <span style="font-weight: 600;">🦆 燒烤油封履歷鴨腿</span>
-              <input type="number" class="menu-item-qty form-input" data-dish="燒烤油封履歷鴨腿" min="0" value="0" style="width: 70px; padding: 6px 10px; font-size: 0.8rem; text-align: center; background-color: var(--bg-card);" />
-            </div>
-            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem;">
-              <span style="font-weight: 600;">🥩 和牛牛排</span>
-              <input type="number" class="menu-item-qty form-input" data-dish="和牛牛排" min="0" value="0" style="width: 70px; padding: 6px 10px; font-size: 0.8rem; text-align: center; background-color: var(--bg-card);" />
+              <span style="font-weight: 600;">🍛 瑪莎曼咖哩燉牛筋</span>
+              <input type="number" class="menu-item-qty form-input" data-dish="瑪莎曼咖哩燉牛筋" min="0" value="0" style="width: 70px; padding: 6px 10px; font-size: 0.8rem; text-align: center; background-color: var(--bg-card);" />
             </div>
           </div>
         </div>
