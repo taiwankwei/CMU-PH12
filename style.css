@@ -1,7 +1,7 @@
 /* ==========================================================================
    DESIGN SYSTEM & VARIABLES
    ========================================================================== */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Serif+TC:wght@400;600;700;900&family=Outfit:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
 
 :root {
   /* Colors - Light Mode */
@@ -2474,5 +2474,212 @@ footer {
 .form-group-sm input:focus {
   border-color: #b75a3c;
   box-shadow: 0 0 0 3px rgba(166, 63, 45, .12);
+}
+
+/* ==========================================================================
+   LITERARY HERO & PHOTO MENU — aligned with the referenced Lifebread page
+   ========================================================================== */
+.hero {
+  min-height: 650px;
+  height: 72vh;
+  padding: 72px 24px 68px;
+  color: #fffaf2;
+  background: #4a2d23;
+}
+
+.hero::after { display: none; }
+.hero-art { display: none; }
+
+.literary-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.literary-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(.82) sepia(.18) hue-rotate(-10deg) contrast(1.06);
+  transform: scale(1.015);
+}
+
+.literary-hero-bg span {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(45, 27, 20, .50), rgba(84, 39, 27, .60)),
+    radial-gradient(circle at 50% 42%, rgba(176, 95, 48, .08), rgba(38, 25, 20, .42));
+}
+
+.hero-content {
+  width: min(900px, 90vw);
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.hero-date {
+  order: 0;
+  margin: 0 auto 30px;
+  padding: 10px 26px;
+  color: #fffaf2;
+  background: rgba(255, 250, 242, .14);
+  border: 1px solid rgba(255, 250, 242, .30);
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(28, 17, 12, .16);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.hero-date span { color: rgba(255, 250, 242, .78); }
+.hero-date strong { color: #fffaf2; letter-spacing: .08em; }
+
+.hero-kicker {
+  margin: 0 0 8px;
+  color: rgba(255, 248, 235, .86);
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: .18em;
+  text-transform: none;
+}
+
+.hero-title {
+  margin: 0 0 18px;
+  color: #fffaf2;
+  font-family: "Noto Serif TC", "DFKai-SB", "BiauKai", serif;
+  font-size: clamp(3.6rem, 7vw, 6.2rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: .08em;
+  text-shadow: 0 8px 28px rgba(28, 17, 12, .38);
+}
+
+.hero-title span { display: inline; transform: none !important; }
+.hero-title span:first-child::after { content: "・"; color: #e7b46b; }
+
+.hero-invitation {
+  margin: 0 auto 17px;
+  color: rgba(255, 250, 242, .92);
+  font-family: "Noto Serif TC", "DFKai-SB", "BiauKai", serif;
+  font-size: 1rem;
+  line-height: 1.9;
+  letter-spacing: .08em;
+  text-shadow: 0 3px 14px rgba(28, 17, 12, .32);
+}
+
+.hero-subtitle {
+  margin: 0 0 22px;
+  color: #f7d9ad;
+  font-family: "Noto Serif TC", "DFKai-SB", serif;
+  font-size: .94rem;
+  letter-spacing: .18em;
+  text-shadow: 0 3px 12px rgba(28, 17, 12, .38);
+}
+
+.hero-register-btn {
+  margin-top: 0;
+  padding: 12px 34px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #a8422d, #c9783b);
+}
+
+.restaurant-menu {
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+.restaurant-menu-header {
+  margin-bottom: 24px;
+  padding: 30px 28px;
+  color: #fffaf2;
+  text-align: left;
+  border: 0;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, #773124, #a95632);
+  box-shadow: var(--shadow-lg);
+}
+
+.restaurant-menu-header p { color: #f5c98e; }
+.restaurant-menu-header h3 { color: #fffaf2; }
+.restaurant-menu-header span { color: rgba(255, 250, 242, .82); }
+
+.restaurant-menu-section {
+  margin-top: 24px;
+  padding: 26px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+}
+
+.restaurant-menu-category { margin-bottom: 20px; }
+.restaurant-menu-category h4 { color: var(--emerald-dark); font-size: 1.3rem; }
+.restaurant-menu-category span { color: var(--text-muted); }
+
+.restaurant-menu-list {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.restaurant-menu-item {
+  padding: 0 0 18px;
+  overflow: hidden;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
+  box-shadow: 0 6px 18px rgba(76, 42, 29, .08);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.restaurant-menu-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(76, 42, 29, .15);
+}
+
+.restaurant-menu-item img {
+  width: 100%;
+  height: 180px;
+  margin: 0 0 15px;
+  object-fit: cover;
+  display: block;
+  transition: transform .35s ease;
+}
+
+.restaurant-menu-item:hover img { transform: scale(1.035); }
+.restaurant-menu-item h5 { padding: 0 16px; font-size: .95rem; }
+.restaurant-menu-item p { padding: 0 16px; font-size: .7rem; }
+
+.restaurant-menu-footer {
+  margin-top: 28px;
+  padding: 18px;
+  border: 0;
+  border-radius: 14px;
+  background: var(--bg-secondary);
+}
+
+@media (max-width: 1050px) {
+  .restaurant-menu-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 768px) {
+  .hero { min-height: 640px; height: auto; padding: 58px 18px 58px; }
+  .hero-content { width: min(92vw, 560px); }
+  .hero-date { margin-bottom: 24px; padding: 8px 18px; }
+  .hero-title { font-size: clamp(3rem, 14vw, 4.8rem); letter-spacing: .04em; }
+  .hero-invitation { font-size: .88rem; line-height: 1.8; }
+  .hero-subtitle { font-size: .78rem; letter-spacing: .11em; }
+  .restaurant-menu-section { padding: 18px; }
+  .restaurant-menu-list { grid-template-columns: 1fr; }
+  .restaurant-menu-item img { height: 210px; }
 }
 
