@@ -2502,16 +2502,16 @@ footer {
   height: 100%;
   object-fit: cover;
   object-position: center;
-  filter: saturate(.82) sepia(.18) hue-rotate(-10deg) contrast(1.06);
-  transform: scale(1.015);
+  filter: saturate(.96) sepia(.08) contrast(1.07);
+  transform: scale(1.01);
 }
 
 .literary-hero-bg span {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(45, 27, 20, .50), rgba(84, 39, 27, .60)),
-    radial-gradient(circle at 50% 42%, rgba(176, 95, 48, .08), rgba(38, 25, 20, .42));
+    linear-gradient(180deg, rgba(37, 27, 19, .34), rgba(92, 45, 25, .58)),
+    radial-gradient(circle at 50% 42%, rgba(193, 122, 53, .04), rgba(38, 25, 20, .32));
 }
 
 .hero-content {
@@ -2613,6 +2613,23 @@ footer {
 .restaurant-menu-header h3 { color: #fffaf2; }
 .restaurant-menu-header span { color: rgba(255, 250, 242, .82); }
 
+.ai-menu-notice {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0 0 24px;
+  padding: 14px 18px;
+  color: #5c2f20;
+  background: #fff2dc;
+  border: 1px solid #d89a62;
+  border-left: 5px solid #a8422d;
+  border-radius: 14px;
+  box-shadow: 0 8px 22px rgba(92, 47, 32, .08);
+}
+
+.ai-menu-notice strong { flex: 0 0 auto; font-size: .9rem; letter-spacing: .08em; }
+.ai-menu-notice span { font-size: .86rem; line-height: 1.7; }
+
 .restaurant-menu-section {
   margin-top: 24px;
   padding: 26px;
@@ -2632,6 +2649,7 @@ footer {
 }
 
 .restaurant-menu-item {
+  position: relative;
   padding: 0 0 18px;
   overflow: hidden;
   background: var(--bg-primary);
@@ -2639,6 +2657,23 @@ footer {
   border-radius: 18px;
   box-shadow: 0 6px 18px rgba(76, 42, 29, .08);
   transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.restaurant-menu-item::before {
+  content: "AI 示意圖";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+  padding: 5px 9px;
+  color: #fffaf2;
+  background: rgba(91, 47, 32, .84);
+  border: 1px solid rgba(255, 250, 242, .38);
+  border-radius: 999px;
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  backdrop-filter: blur(5px);
 }
 
 .restaurant-menu-item:hover {
@@ -2681,5 +2716,6 @@ footer {
   .restaurant-menu-section { padding: 18px; }
   .restaurant-menu-list { grid-template-columns: 1fr; }
   .restaurant-menu-item img { height: 210px; }
+  .ai-menu-notice { align-items: flex-start; flex-direction: column; gap: 4px; }
 }
 

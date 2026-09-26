@@ -811,25 +811,42 @@ async function handleRegisterSubmit() {
   let dbSuccess = false;
   let dbMsg = '';
 
+  const registrationData = {
+    name: name,
+    count: count,
+    adults: adults,
+    children: children,
+    childChair: childChair,
+    orders: orders,
+    eventId: 'cmu_ph12_20261128',
+    eventDate: '2026-11-28',
+    source: 'CMU-PH12',
+    timestamp: isFirebaseConnected && window.firebase
+      ? firebase.firestore.FieldValue.serverTimestamp()
+      : new Date().toISOString()
+  };
+
   if (isFirebaseConnected && firestoreDB) {
-    // Write to Firestore database
+    // Use the dedicated collection first, then the original site collection
+    // for projects whose deployed rules have not yet added CMU-PH12.
     try {
-      await firestoreDB.collection("cmu_ph12_registrations").add({
-        name: name,
-        count: count,
-        adults: adults,
-        children: children,
-        childChair: childChair,
-        orders: orders,
-        timestamp: firebase.firestore.FieldValue.serverTimestamp()
-      });
+      await firestoreDB.collection("cmu_ph12_registrations").add(registrationData);
       dbSuccess = true;
       dbMsg = '已上傳至雲端 Firebase';
-    } catch (error) {
-      console.error("Firestore submit error:", error);
-      saveToLocalFallbackData(name, count, adults, children, childChair, orders);
-      dbSuccess = false;
-      dbMsg = `雲端儲存失敗 (${error.message})，已備份至瀏覽器`;
+    } catch (primaryError) {
+      console.warn("Dedicated Firestore collection unavailable:", primaryError);
+      try {
+        await firestoreDB.collection("beitou_registrations").add(registrationData);
+        dbSuccess = true;
+        dbMsg = '已上傳至雲端活動資料庫';
+      } catch (fallbackError) {
+        console.error("Firestore fallback submit error:", fallbackError);
+        const savedLocal = saveToLocalFallbackData(name, count, adults, children, childChair, orders);
+        dbSuccess = savedLocal;
+        dbMsg = savedLocal
+          ? '雲端暫時無法連線，已儲存於此裝置並繼續送出通知'
+          : `資料儲存失敗 (${fallbackError.message})`;
+      }
     }
   } else {
     // Local fallback when Firebase config is missing
@@ -903,7 +920,7 @@ async function handleRegisterSubmit() {
   }
 
   if (dbSuccess) {
-    showRegStatus('success', '🎉 報名成功！');
+    showRegStatus('success', `🎉 報名成功！${dbMsg}${emailMsg}`);
     regForm.reset();
     hasWarnedMismatch = false;
     
@@ -933,6 +950,9 @@ function saveToLocalFallbackData(name, count, adults, children, childChair, orde
       children: children,
       childChair: childChair,
       orders: orders,
+      eventId: 'cmu_ph12_20261128',
+      eventDate: '2026-11-28',
+      source: 'CMU-PH12',
       timestamp: new Date().toISOString()
     });
     localStorage.setItem('cmu_ph12_registrations', JSON.stringify(localData));
