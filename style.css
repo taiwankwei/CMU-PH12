@@ -1967,6 +1967,185 @@ footer {
   transform: translateY(0);
 }
 
+/* ==========================================================================
+   2026 AUTUMN COVER — inspired by the supplied geometric paper poster
+   ========================================================================== */
+.hero {
+  min-height: 720px;
+  height: auto;
+  padding: 88px 24px 74px;
+  color: #201f1a;
+  background:
+    radial-gradient(circle at 25% 30%, rgba(255,255,255,.42), transparent 26%),
+    repeating-linear-gradient(4deg, rgba(71,55,26,.025) 0 1px, transparent 1px 5px),
+    #f3e6c7;
+  isolation: isolate;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border: 2px solid rgba(40, 38, 29, .24);
+  border-radius: 4px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-art {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-content {
+  width: min(760px, 82vw);
+  margin: 0 auto;
+  z-index: 2;
+}
+
+.hero-kicker {
+  margin: 0 0 24px;
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .46em;
+  color: #61583e;
+}
+
+.hero-title {
+  margin: 0 0 26px;
+  color: #25221b;
+  font-family: "DFKai-SB", "BiauKai", "Noto Serif TC", serif;
+  font-size: clamp(4rem, 8vw, 7.4rem);
+  font-weight: 500;
+  line-height: .98;
+  letter-spacing: .04em;
+  text-shadow: 1px 2px 0 rgba(255,255,255,.42);
+}
+
+.hero-title span { display: block; }
+.hero-title span:first-child { transform: translateX(-1.25em); }
+.hero-title span:last-child { transform: translateX(.45em); }
+
+.hero-invitation {
+  margin: 0 auto 28px;
+  color: #494231;
+  font-family: "DFKai-SB", "BiauKai", "Noto Serif TC", serif;
+  font-size: 1.05rem;
+  line-height: 1.9;
+  letter-spacing: .08em;
+}
+
+.hero-date {
+  width: fit-content;
+  margin: 0 auto 24px;
+  padding: 10px 22px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: #29261d;
+  background: transparent;
+  border: 1px solid #29261d;
+  border-radius: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+  animation: none;
+  letter-spacing: .08em;
+}
+
+.hero-date span { font-size: .72rem; font-weight: 700; }
+.hero-date strong { font-size: 1rem; font-weight: 800; }
+
+.hero-subtitle {
+  margin: 0;
+  color: #373328;
+  font-family: "DFKai-SB", "BiauKai", "Noto Serif TC", serif;
+  font-size: 1rem;
+  font-style: normal;
+  letter-spacing: .18em;
+  text-shadow: none;
+}
+
+.hero-shape, .hero-star, .hero-eye, .hero-figure { position: absolute; display: block; }
+.shape-sun { width: 142px; height: 142px; top: 58px; right: 13%; border-radius: 50%; background: #dc3b1e; }
+.shape-moon { width: 142px; height: 142px; top: 36px; left: 13%; border-radius: 50%; background: #181914; }
+.shape-moon::after { content: ""; position: absolute; width: 118px; height: 150px; left: 44px; top: -8px; border-radius: 50%; background: #f3e6c7; }
+.shape-blue-dot { width: 70px; height: 70px; top: 78px; left: 30%; border-radius: 50%; background: #176caf; }
+.shape-yellow-dot { width: 56px; height: 78px; left: 8%; top: 54%; border-radius: 50%; background: #f3bd11; transform: rotate(18deg); }
+.shape-red-pill { width: 92px; height: 176px; left: 9%; bottom: -32px; border-radius: 60% 42% 48% 56%; background: #de3b20; transform: rotate(32deg); }
+.shape-blue-moon { width: 92px; height: 92px; right: 6%; bottom: 38px; border-radius: 50%; background: #176caf; }
+.shape-blue-moon::after { content: ""; position: absolute; width: 82px; height: 84px; left: -24px; top: -20px; border-radius: 50%; background: #f3e6c7; }
+.hero-star { color: #161712; font-size: 58px; line-height: 1; }
+.star-one { top: 21%; left: 6%; }
+.star-two { right: 7%; top: 44%; }
+
+.hero-eye { width: 92px; height: 48px; border: 6px solid #181914; border-radius: 70% 0 70% 0; transform: rotate(45deg); }
+.hero-eye i { position: absolute; width: 34px; height: 34px; left: 23px; top: 1px; border-radius: 50%; background: #176caf; border: 8px solid #181914; }
+.eye-one { right: 7%; top: 23%; transform: rotate(45deg) scale(.72); }
+.eye-two { left: 13%; bottom: 18%; transform: rotate(45deg) scale(.5); }
+
+.hero-figure { right: 11%; top: 29%; width: 110px; height: 285px; }
+.figure-eye { position: absolute; top: 0; left: 17px; width: 76px; height: 40px; border: 5px solid #181914; border-radius: 70% 0 70% 0; transform: rotate(45deg); }
+.figure-eye::after { content: ""; position: absolute; width: 22px; height: 22px; left: 22px; top: 4px; border-radius: 50%; background: #176caf; border: 5px solid #181914; }
+.figure-body { position: absolute; left: 10px; bottom: 0; width: 90px; height: 218px; border: 3px solid #181914; border-radius: 50% 50% 45% 45%; background: conic-gradient(from -20deg, #181914 0 25%, #f2bf17 0 50%, #176caf 0 75%, #dd3c20 0); }
+
+/* Menu typography follows the supplied printed restaurant menu. */
+.restaurant-menu {
+  margin-top: 26px;
+  padding: clamp(28px, 5vw, 58px);
+  color: #4d4831;
+  background:
+    repeating-linear-gradient(2deg, rgba(77,72,49,.018) 0 1px, transparent 1px 6px),
+    #f1efe6;
+  border: 4px solid #5a5438;
+  box-shadow: 0 12px 34px rgba(43, 39, 25, .12);
+}
+
+.restaurant-menu-header { text-align: center; padding-bottom: 24px; border-bottom: 2px solid #5a5438; }
+.restaurant-menu-header p { margin: 0 0 10px; font-size: .72rem; font-weight: 800; letter-spacing: .42em; }
+.restaurant-menu-header h3 { margin: 0 0 10px; font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 900; letter-spacing: .1em; }
+.restaurant-menu-header span { font-size: .78rem; letter-spacing: .08em; }
+.restaurant-menu-section { margin-top: 34px; }
+.restaurant-menu-category { margin-bottom: 18px; border-bottom: 1px solid rgba(90,84,56,.55); }
+.restaurant-menu-category h4 { margin: 0 0 9px; font-size: 1.22rem; letter-spacing: .16em; }
+.restaurant-menu-category span { margin-left: 8px; font-family: Georgia, serif; font-size: .82rem; letter-spacing: .28em; }
+.restaurant-menu-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 36px; }
+.restaurant-menu-item { padding: 13px 0 15px; border-bottom: 1px dashed rgba(90,84,56,.2); }
+.restaurant-menu-item h5 { margin: 0 0 7px; font-size: .95rem; font-weight: 900; letter-spacing: .06em; }
+.restaurant-menu-item h5 em { display: inline-block; margin-left: 6px; padding: 2px 7px; border: 1px solid currentColor; border-radius: 20px; font-size: .6rem; font-style: normal; vertical-align: 2px; }
+.restaurant-menu-item p { margin: 0; color: #6f6950; font-size: .7rem; line-height: 1.75; letter-spacing: .035em; }
+.restaurant-menu-footer { margin-top: 34px; padding-top: 18px; border-top: 2px solid #5a5438; text-align: center; font-size: .74rem; font-weight: 800; letter-spacing: .18em; }
+
+@media (max-width: 768px) {
+  .hero { min-height: 650px; height: auto; padding: 82px 20px 62px; }
+  .hero::after { inset: 10px; }
+  .hero-content { width: min(88vw, 540px); }
+  .hero-title { font-size: clamp(3.2rem, 16vw, 5rem); }
+  .hero-title span:first-child { transform: translateX(-.55em); }
+  .hero-title span:last-child { transform: translateX(.2em); }
+  .hero-invitation { font-size: .88rem; line-height: 1.85; }
+  .hero-date { gap: 10px; padding: 9px 13px; }
+  .hero-date strong { font-size: .86rem; }
+  .hero-subtitle { font-size: .78rem; letter-spacing: .1em; }
+  .shape-sun { width: 82px; height: 82px; right: 8%; top: 50px; }
+  .shape-moon { width: 88px; height: 88px; left: 8%; top: 30px; }
+  .shape-moon::after { width: 76px; height: 94px; left: 28px; }
+  .shape-blue-dot { width: 42px; height: 42px; top: 94px; left: 32%; }
+  .hero-figure { right: 1%; top: 35%; transform: scale(.55); transform-origin: top right; }
+  .star-one { left: 3%; top: 25%; font-size: 38px; }
+  .star-two { right: 3%; top: 60%; font-size: 36px; }
+  .eye-one { display: none; }
+  .eye-two { left: 1%; bottom: 16%; }
+  .shape-yellow-dot { left: 4%; top: 63%; width: 38px; height: 56px; }
+  .shape-red-pill { width: 62px; height: 120px; left: 3%; }
+  .shape-blue-moon { width: 62px; height: 62px; right: 4%; bottom: 22px; }
+  .restaurant-menu { padding: 28px 20px; border-width: 3px; }
+  .restaurant-menu-list { grid-template-columns: 1fr; }
+  .restaurant-menu-header p { letter-spacing: .22em; }
+}
+
 .modal-overlay {
   position: fixed;
   inset: 0;
